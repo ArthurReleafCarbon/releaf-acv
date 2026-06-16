@@ -5,10 +5,10 @@ description: Génère la trame de collecte Excel adaptée au scénario du projet
 
 # generer-trame-collecte
 
-> 🚧 **STUB** — squelette à compléter. Owner : **Nathan**.
+> 🚧 **STUB** — squelette à compléter. Owner : **Thomas**.
 
 **Couche :** C1 · Déterministe
-**Owner :** Nathan
+**Owner :** Thomas
 **Statut :** `à faire`
 
 ## Objectif
