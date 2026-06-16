@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "_comment": "Connecteur OneDrive/SharePoint à brancher (déjà en place côté Cowork). Les skills lisent/écrivent les dossiers projets versionnés. À configurer en vague 1."
+  }
+}

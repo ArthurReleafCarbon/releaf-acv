@@ -1,0 +1,18 @@
+{
+  "name": "releaf-acv",
+  "version": "0.1.0",
+  "description": "Plugin Releaf Carbon pour automatiser la mécanique répétitive de la modélisation ACV/EPD autour de SimaPro — l'IA exécute, le praticien garde la main.",
+  "author": {
+    "name": "Releaf Carbon"
+  },
+  "homepage": "https://github.com/ArthurReleafCarbon/releaf-acv",
+  "repository": "https://github.com/ArthurReleafCarbon/releaf-acv",
+  "keywords": [
+    "acv",
+    "epd",
+    "fdes",
+    "simapro",
+    "inies",
+    "releaf"
+  ]
+}

@@ -1,0 +1,19 @@
+# Système
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Données projets (ne JAMAIS committer de données client — elles vivent dans OneDrive)
+*.xlsx
+*.docx
+*.pdf
+!templates/**/*.docx
+!templates/**/*.xlsx
+data/
+projets/
+_logs/
