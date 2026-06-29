@@ -59,5 +59,7 @@ Chaque `SKILL.md` contient :
 
 ## Questions ouvertes (à trancher en équipe — cf. ARCHITECTURE.md)
 
-Convention OneDrive, template Word à slots, format des logs, emplacement du bilan massique,
+Template Word à slots, format des logs, emplacement du bilan massique,
 robustesse trame modifiée, table d'affectation des FE.
+
+> ✅ Convention OneDrive : **tranchée** — cf. `referentiels/conventions-onedrive.md`.
