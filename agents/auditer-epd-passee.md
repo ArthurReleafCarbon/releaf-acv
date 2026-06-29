@@ -7,10 +7,10 @@ description: >
 
 # Agent · auditer-epd-passee
 
-> 🚧 **STUB** — à compléter. Owner : **Vincent**.
+> 🚧 **STUB** — à compléter. Owner : **Nathan**.
 
 **Couche :** C4 · Agent orchestrateur
-**Owner :** Vincent
+**Owner :** Nathan
 **Statut :** `à faire`
 
 ## Rôle
