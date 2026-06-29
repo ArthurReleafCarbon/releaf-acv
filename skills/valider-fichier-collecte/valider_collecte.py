@@ -106,13 +106,61 @@ BILAN_REPERES = {
 # Champs obligatoires : onglet -> liste de (libelle_ligne, cellule_valeur).
 # Ex. ("Nom de la societe", "C4"). DUVP volontairement absente (decision actee).
 CHAMPS_OBLIGATOIRES = {
-    # "1. Societe et site": [("Nom de la societe", "C4")],
+     "1. Société et site": [
+        ("Nom de la société", "C4"),
+        ("Personne référente (nom)", "C5"),
+        ("Email du référent", "C6"),
+        ("Téléphone du référent", "C7"),
+        ("Nom du site", "C10"),
+        ("Adresse du site", "C11"),
+        ("Année de référence des données", "C16"),
+        ("Date de remplissage", "C19"),
+    ],
+
+    # Tableau répétable : 1 ligne par produit, à partir de la ligne 5
+    "2. Vos produits": [
+        ("Référence interne / code", "A5"),
+        ("Nom commercial", "B5"),
+        ("Masse d'une unité (kg)", "G5"),
+        ("Unité de vente", "H5"),
+        ("Quantité fabriquée sur l'année", "I5"),
+        ("Unité de cette quantité", "J5"),
+    ],
+
+    # Tableau répétable : 1 ligne par matière ET par produit, à partir de la ligne 6
+    "3. Composition des produits": [
+        ("Référence produit", "A6"),
+        ("Matière / composant", "B6"),
+        ("Masse pour 1 unité de produit (kg)", "C6"),
+        ("Matière recyclée ?", "D6"),
+    ],
+
+    # CONDITIONNEL : à remplir uniquement si déclaration GEREP / ICPE
+    "6. Rejets air-eau (GEREP)": [
+        # (optionnel — valeurs par défaut sinon)
+    ],
+
+    # INDICATIF : une estimation suffit (valeurs normalisées sinon)
+    "8. Livraison et fin de vie": [
+        ("Mode de transport principal vers vos clients", "C6"),
+        ("Distance site → client (km)", "C7"),
+        ("Durée de vie estimée du produit (années)", "C10"),
+        ("Que devient le produit en fin de vie", "C14"),
+    ]
 }
 
 # Liste blanche d'unites par onglet/colonne. Aucune dropdown detectee dans la
 # trame, donc rien n'est presume. A remplir si les unites sont controlees.
 # Ex. {"4. Energie - Eau": {"col": 4, "autorisees": {"kWh", "MWh", "L", "m3"}}}
-UNITES_AUTORISEES = {}
+UNITES_AUTORISEES = {
+    "2. Vos produits":               {"col": 8, "autorisees": {"kg", "g", "t", "u", "m", "m2", "m3"}},
+    "2. Vos produits":               {"col": 10, "autorisees": {"kg", "g", "t", "u", "m", "m2", "m3"}},
+    "3. Composition des produits":   {"col": 3, "autorisees": {"kg", "g"}},
+    "4. Énergie - Eau":              {"col": 4, "autorisees": {"kWh", "MWh", "L", "m3", "kg", "MJ"}},
+    "5. Déchets":                    {"col": 4, "autorisees": {"kg", "t", "l", "m3", "u"}},
+    "6. Rejets air-eau (GEREP)":     {"col": 4, "autorisees": {"kg", "g", "mg", "t", "tCO2", "m3"}},
+    "7. Emballages":                 {"col": 4, "autorisees": {"kg", "g", "t", "u",}},
+}
 
 # Bornes physiques par champ pour le controle d'ordre de grandeur.
 # Ex. {"4. Energie - Eau": {"col_valeur": 3, "min": 0, "max": 1e9}}
