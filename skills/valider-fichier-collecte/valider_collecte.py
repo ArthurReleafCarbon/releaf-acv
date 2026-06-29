@@ -154,8 +154,6 @@ CHAMPS_OBLIGATOIRES = {
 # Ex. {"4. Energie - Eau": {"col": 4, "autorisees": {"kWh", "MWh", "L", "m3"}}}
 UNITES_AUTORISEES = {
     "2. Vos produits":               {"col": 8, "autorisees": {"kg", "g", "t", "u", "m", "m2", "m3"}},
-    "2. Vos produits":               {"col": 10, "autorisees": {"kg", "g", "t", "u", "m", "m2", "m3"}},
-    "3. Composition des produits":   {"col": 3, "autorisees": {"kg", "g"}},
     "4. Énergie - Eau":              {"col": 4, "autorisees": {"kWh", "MWh", "L", "m3", "kg", "MJ"}},
     "5. Déchets":                    {"col": 4, "autorisees": {"kg", "t", "l", "m3", "u"}},
     "6. Rejets air-eau (GEREP)":     {"col": 4, "autorisees": {"kg", "g", "mg", "t", "tCO2", "m3"}},
