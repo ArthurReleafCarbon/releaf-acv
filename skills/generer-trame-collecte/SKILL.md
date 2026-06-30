@@ -18,7 +18,7 @@ Produire le fichier de collecte client à partir du gabarit validé, en l'adapta
 ## Entrées / Sorties
 
 - **Entrées :** scénario (mono/multi), type de produit et procédé, contexte projet lu dans `projet/v_n/`. Gabarit de référence : `assets/base_collecte_fdes.xlsx` (du skill).
-- **Sorties :** `projet/v_n+1/trame-collecte.xlsx` + changelog + trace dans `_logs/`.
+- **Sorties :** `projet/v_n+1/trame-collecte-{produit}-{usine}.xlsx` + changelog + trace dans `_logs/`. Les variables `{produit}` et `{usine}` sont substituées par les valeurs lues dans le contexte projet (`projet/v_n/`), en minuscules sans accents ni espaces (remplacés par `-`).
 
 ## Règle d'or : STRUCTURE, pas CONTENU
 
@@ -34,7 +34,7 @@ Le skill modifie des **champs**, jamais des données.
 ## Étapes
 
 1. **Lire le contexte.** Charger le scénario et le contexte produit/site depuis projet/v_n/. Si l'information manque ou est ambiguë, poser UNE question de clarification. Ne pas deviner.
-2. **Inférer le profil de structure** (inférence libre, voir reference/base_layout.md pour les positions exactes) : attributs produit (onglet 2), postes d'énergie propres au procédé (onglet 5), lignes d'émissions à retirer (onglet 7, ex : CO2 décarbonatation réservé terre cuite / ciment / chaux), déchets de procédé (onglet 6), emballages (onglet 8), vocabulaire fin de vie (onglet 9), onglets sans objet à retirer (+ ligne du sommaire onglet 0).
+2. **Inférer le profil de structure** (inférence libre, voir reference/base_layout.md pour les positions exactes) : attributs produit (onglet 2), produits consommés en fabrication (onglet 3, bloc 2), postes d'énergie / consommations propres au procédé (onglet 4), déchets de procédé (onglet 5), emballages (onglet 6), sections d'usage pertinentes (onglet 7 : utilisation, maintenance, réparation, remplacement, réhabilitation), vocabulaire fin de vie (onglet 8), onglets ou sections sans objet à retirer (+ ligne du sommaire onglet 0). La base ne contient plus d'onglet rejets air-eau (GEREP).
 3. **Présenter le diff pour validation.** Lister, par onglet, les changements de structure prévus. Attendre l'accord du praticien. Ne rien écrire avant validation.
 4. **Appliquer.** Copier l'asset vers le fichier de travail (jamais éditer l'asset).
    Écrire un court script pilote important `scripts/adapt_collecte.py` (primitives :

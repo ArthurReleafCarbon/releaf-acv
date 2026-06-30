@@ -61,7 +61,9 @@ Puis `snapshot-projet` → `diff-versions-projet` → `preparer-reponses-verific
 
 ## Décisions à trancher (vague 1)
 
-- **Convention de nommage / arborescence OneDrive** (Arthur + Nathan) — conditionne toutes les skills.
+- ✅ **Convention de nommage / arborescence OneDrive** — **tranchée (2026-06-29)**. Modèle imbriqué :
+  `client/produit/v_n/` (versioning + snapshots) avec, dans chaque `v_n/`, les 6 dossiers d'étape.
+  Voir [`referentiels/conventions-onedrive.md`](referentiels/conventions-onedrive.md).
 - **Template Word « à slots »** (Nathan + Arthur) — placeholders tableaux + tags chiffres + section visuels/client.
 - **Format des logs skills** (Arthur + Nathan) — JSON ou Markdown, présentable au vérificateur.
 - **Emplacement standard du bilan massique** dans chaque projet.

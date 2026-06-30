@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "convention": "arborescence-onedrive",
+  "version_convention": "1.0",
+  "valide_le": "2026-06-29",
+  "description": "Source unique des chemins, du nommage et de la resolution OneDrive pour les projets EPD/FDES. Voir conventions-onedrive.md.",
+
+  "resolution_racine_onedrive": {
+    "ordre": ["env", "macos", "windows"],
+    "env": "RELEAF_ONEDRIVE_ROOT",
+    "macos_glob": "~/Library/CloudStorage/OneDrive-ReleafCarbon*/Releaf Carbon - Documents",
+    "windows_glob": "%USERPROFILE%/Releaf Carbon - Documents"
+  },
+
+  "chemins_relatifs": {
+    "missions_en_cours": "2. Commercial/1. Missions en cours",
+    "dossier_type": "2. Commercial/1. Missions en cours/0. Dossier client FDES",
+    "template_legacy": "5. Outils/13. Automatisation FDES/Dossier FDES"
+  },
+
+  "nommage": {
+    "mission": "{client}/FDES {produit}",
+    "dossier_client": "nom réel lisible",
+    "dossier_produit": "FDES {nom du produit}",
+    "dossier_produit_exemple": "FDES Performance Plus",
+    "casse_dossiers_projet": "lisible",
+    "casse_code_plugin": "kebab-case",
+    "version_regex": "^v_[1-3]$",
+    "version_max": 3,
+    "version_depassement": "alerter (ne pas créer v_4 en silence)",
+    "versions_exemples": ["v_1", "v_2", "v_3"],
+    "semantique_version": "une version par tour de vérification, 3 tours maximum"
+  },
+
+  "structure_version": {
+    "dossiers_etape": [
+      { "nom": "1. Collecte de données", "contenu": ["trame de collecte", "données brutes client", "bilan massique"] },
+      { "nom": "2. Modélisation", "contenu": ["Modélisation.xlsx", "fichier d'import SimaPro", "export SimaPro brut"] },
+      { "nom": "3. Rapport et FDES", "contenu": ["rapport d'accompagnement", "fiche FDES"] },
+      { "nom": "4. Résultats et analyses", "contenu": ["tableaux ICV", "tableur résultats", "analyses sensi/variabilité/gravité (humain)"] },
+      { "nom": "5. Vérification", "contenu": ["commentaires vérificateur", "réponses", "justificatifs"] },
+      { "nom": "6. Import INIES", "contenu": ["fichier d'import INIES"] }
+    ],
+    "dossiers_techniques": [
+      { "nom": "_logs", "contenu": ["traces d'exécution des skills (auditabilité ISO)"], "format": "a_figer_roadmap_3" }
+    ]
+  },
+
+  "bilan_massique": {
+    "emplacement": "1. Collecte de données",
+    "statut": "a_confirmer_roadmap_4"
+  },
+
+  "regles": {
+    "idempotence": "lire projet/v_n, ecrire projet/v_n+1, jamais en place",
+    "structure_absente": "alerter, ne pas deviner",
+    "chemins_plugin": "${CLAUDE_PLUGIN_ROOT}",
+    "chemins_projet": "resoudre via racine OneDrive, jamais en dur"
+  }
+}
