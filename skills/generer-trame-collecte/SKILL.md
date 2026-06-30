@@ -17,7 +17,7 @@ Produire le fichier de collecte client à partir du gabarit validé, en l'adapta
 
 ## Entrées / Sorties
 
-- **Entrées :** scénario (mono/multi), type de produit et procédé, contexte projet lu dans `projet/v_n/`. Gabarit de référence : `assets/base_collecte_fdes.xlsx` (du skill).
+- **Entrées :** scénario (mono/multi), type de produit et procédé, contexte projet lu dans `projet/v_n/`. Gabarit de référence : `templates/base_collecte_fdes.xlsx` (du skill).
 - **Sorties :** `projet/v_n+1/trame-collecte-{produit}-{usine}.xlsx` + changelog + trace dans `_logs/`. Les variables `{produit}` et `{usine}` sont substituées par les valeurs lues dans le contexte projet (`projet/v_n/`), en minuscules sans accents ni espaces (remplacés par `-`).
 
 ## Règle d'or : STRUCTURE, pas CONTENU
