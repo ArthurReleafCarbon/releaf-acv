@@ -17,9 +17,8 @@ Vérifier ces positions au runtime (la base peut évoluer) plutôt que de les su
 - `ListeProduits` = `'2. Vos produits'!$A$5:$A$54` (plage des références produit ; conservée comme repère, plus utilisée comme source de déroulant)
 
 ## Onglets (ordre actuel)
-`0. Mode d'emploi` | `1. Société et site` | `2. Vos produits` | `3. Composition des produits` | `4. Matières auxilliaires` | `5. Énergie - Eau` | `6. Déchets` | `7. Rejets air-eau (GEREP)` | `8. Emballages` | `9. Livraison et fin de vie`
+`0. Mode d'emploi` | `1. Société et site` | `2. Vos produits` | `3. Composition des produits` | `4. Énergie - Eau` | `5. Déchets` | `6. Rejets air-eau (GEREP)` | `7. Emballages` | `8. Livraison et fin de vie`
 
-> Défauts connus et conservés (décision client) : doublon du bloc "produits consommés" en bas de l'onglet 3 ; numérotation des titres internes désynchronisée ; "auxilliaires" mal orthographié ; sommaire de l'onglet 0 désynchronisé ; eau réduite à une ligne ; déroulants absents dans la base. Le skill NE corrige PAS la base. Le fichier de sortie ne contient AUCUNE liste déroulante (décision Thomas) : les unités et valeurs attendues sont écrites en clair dans les libellés.
 
 ## Ancres par onglet
 
