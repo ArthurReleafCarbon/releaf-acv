@@ -44,20 +44,24 @@ Chemins **relatifs** (depuis la racine `Releaf Carbon - Documents`) :
 ## 3. Nommage
 
 ```
-2. Commercial/1. Missions en cours/
-  <client>/                 ← kebab-case (ex. alphapro)
-    <produit>/              ← kebab-case (ex. performance-plus)
-      v1-initiale/          ← première version livrée au vérificateur
-      v2-verif1/            ← snapshot après 1er aller-retour vérificateur
-      v3-verif2/
-      v4-final/             ← version finale (import INIES)
+2. Commercial/
+  1. Missions en cours/
+    <Nom du client>/            ← nom réel du client (lisible)
+      FDES <nom du produit>/    ← dossier produit, préfixé "FDES "
+        v_1/                    ← version du 1er tour de vérification
+        v_2/                    ← 2e tour
+        v_3/                    ← 3e tour (MAXIMUM — jamais plus de 3)
 ```
 
 Règles :
 
-- **kebab-case** partout (dossiers, fichiers) — cohérent avec `CONTRIBUTING.md`.
-- Version = `v{n}` + label court optionnel (`-initiale`, `-verif1`, `-final`). `n` strictement croissant.
-- Un projet = `<client>/<produit>`. Multi-produit d'un même client = plusieurs sous-dossiers produit.
+- **Client** : nom réel lisible (ex. `Alphapro`). **Produit** : `FDES <nom du produit>` (ex. `FDES Performance Plus`).
+- **Version** : `v_n` avec `n ∈ {1, 2, 3}`. **Une version par tour de vérification, 3 maximum** (règle
+  métier : il n'y a jamais plus de 3 tours de vérif). Un tour de vérif = un nouveau `v_n`.
+- Un projet = `<client>/FDES <produit>`. Multi-produit d'un même client = plusieurs dossiers `FDES …`.
+- Au-delà de `v_3` (cas exceptionnel) : les skills **alertent**, elles ne créent pas `v_4` en silence.
+- Note : la casse **kebab-case** reste la règle pour le code du plugin (skills, fichiers du repo,
+  cf. `CONTRIBUTING.md`) ; les **dossiers projet OneDrive** suivent le nommage lisible ci-dessus.
 
 ## 4. Les 6 dossiers d'étape (dans CHAQUE `v_n/`)
 
