@@ -43,6 +43,8 @@ Le skill modifie des **champs**, jamais des données.
 5. **Recalculer et vérifier.** python /mnt/skills/public/xlsx/scripts/recalc.py <fichier> 60. Exiger zéro erreur. Vérifier qu'aucune cellule de saisie n'a été pré-remplie.
 6. **Écrire la sortie en v_n+1/** + log. Sortir dans projet/v_n+1/, jamais en place.
 Écrire une trace dans _logs/ (scénario, produit, diff appliqué, horodatage).
+Le log **doit commencer par un frontmatter YAML** décrivant la structure réellement appliquée (onglets présents, colonnes d'attributs de l'onglet 2, champs obligatoires, postes d'énergie obligatoires, unités et valeurs attendues, bornes). Ce frontmatter est le **contrat de structure** consommé par `verifier-trame-collecte` pour valider la trame remplie. Schéma : `../verifier-trame-collecte/reference/contrat-structure.md`. Le reste du log reste en texte libre pour l'humain.
+   En pratique, utiliser `scripts/emit_contrat.py` : `deriver_contrat(wb, scenario, produit, overrides)` **dérive le contrat depuis le classeur généré** (onglets présents, colonnes d'attributs de l'onglet 2), garantissant qu'il colle à la structure réelle ; `ecrire_log(chemin, contrat, texte_humain)` écrit le fichier. Le script pilote ne fournit dans `overrides` que la politique produit non dérivable : `postes_energie_obligatoires`, `unites_attendues`, `valeurs_fermees`, `bornes`. Ne pas rédiger le YAML à la main.
 Joindre une section À vérifier par le consultant : Unité fonctionnelle candidate, en pistes à vérifier, jamais affirmées.
 
 ## Garde-fous (posture Releaf — CR 20/05)
